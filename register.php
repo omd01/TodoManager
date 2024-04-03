@@ -3,7 +3,8 @@ session_start();
 require_once 'config.php';
 require_once 'dbh.php';
 require_once 'functions.php';
-require_once 'PHPMailer/PHPMailerAutoload.php';
+include 'mail.php';
+// require_once 'PHPMailer/PHPMailerAutoload.php';
 if (isset($_POST['register']))
 {
 
@@ -20,23 +21,24 @@ $sql="INSERT INTO users (fname,lname,email,password,vcode) VALUES ('$fname','$ln
 $conn->query($sql);
 $fullname=$fname.' '.$lname;
 $id= $conn->insert_id;
-$mail = new PHPMailer;
+// $mail = new PHPMailer;
 //$mail->SMTPDebug = 3;                               
-$mail->isSMTP();                                      
-$mail->Host = MAILHOST;  
-$mail->SMTPAuth = true;                           
-$mail->Username = EMAIL;       
-$mail->Password = SECRET;               
-$mail->SMTPSecure = MAILSECURE;                       
-$mail->Port = MAILPORT;                                 
+// $mail->isSMTP();                                      
+// $mail->Host = MAILHOST;  
+// $mail->SMTPAuth = true;                           
+// $mail->Username = EMAIL;       
+// $mail->Password = SECRET;               
+// $mail->SMTPSecure = MAILSECURE;                       
+// $mail->Port = MAILPORT;                                 
 
-$mail->setFrom(EMAIL, 'Techdekola');
+// $mail->setFrom(EMAIL, 'Todo Manager');
+// $mail->addAddress($email,$fullname);   
+// $mail->addReplyTo(EMAIL, 'Todo Manager');
+// $mail->isHTML(true);   
+
 $mail->addAddress($email,$fullname);   
-$mail->addReplyTo(EMAIL, 'Techdekola');
-$mail->isHTML(true);                                  
-
 $mail->Subject = 'A verification link';
-$mail->Body    = 'Click on the link to verify your account <a href="http://localhost/login-system/verify.php?v={$vcode}&id={$id}">click here</a>';
+$mail->Body    = 'Click on the link to verify your account <a href="http://localhost/login-system/verify.php?v='.$vcode.'&id='.$id.'">click here</a>';
 $mail->send();
 $_SESSION['id']=$id;
 header('location:index.php');

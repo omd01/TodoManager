@@ -11,11 +11,21 @@ if (isset($_POST['login'])){
     $loginsql="SELECT * FROM users WHERE email='$email'";
     $loginquery=$conn->query($loginsql);
     $result=$loginquery->fetch_assoc();
+    if($loginquery->num_rows > 0){
     $pass=$result['password'];
     $userid=$result['id'];
+    $lname=$result['lname'];
+    $fname=$result['fname'];
+    $email=$result['email'];
+    $verified = $result['verify'];
+    }
 if (check() > 0){
     if(password_verify($password,$pass)){
         $_SESSION['id']=$userid;
+        $_SESSION['lname']=$lname;
+        $_SESSION['fname']=$fname;
+        $_SESSION['email']=$email;
+        $_SESSION['verified']=$verified;
         header('location:index.php');
 
         }

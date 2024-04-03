@@ -11,8 +11,8 @@ if (isset($_GET['id']) && isset($_GET['v'])){
 
 		$vsql="SELECT * FROM users WHERE vcode='$v'";
 		$vquery=$conn->query($vsql);
-		$vrs=$vquery->fetch_assoc();
-		$vid=$vrs['id'];
+		$vrs= $vquery->fetch_assoc();
+		$vid= $vrs['id'];
 		if ($id == $vid){
 			$vaccount="UPDATE users SET verify=1 WHERE id=$id";
 			$conn->query($vaccount);
