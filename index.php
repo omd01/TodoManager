@@ -95,7 +95,6 @@ include 'mail.php';
         <div id="todos">
             <?php
             // Fetch todos from database
-            $readonly = true;
             $userid = $_SESSION['id'];
             $sql = "SELECT * FROM todos where user_id = '$userid'";
             $result = $conn->query($sql);
