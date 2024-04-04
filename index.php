@@ -1,4 +1,5 @@
-<?php session_start(); include 'head.php';
+<?php session_start(); 
+include 'head.php';
 if (empty($_SESSION)){header("location:home/index.html");}
 else if( $_SESSION['verified'] == 0){
     header("location:notVerified.php");
