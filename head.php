@@ -1,4 +1,6 @@
 <head>
+<link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Microsoft_To-Do_icon.svg/2515px-Microsoft_To-Do_icon.svg.png">
+   
   <style>
           * {
     margin: 0;
@@ -124,7 +126,7 @@
                     <li><a class="nav-link" href="http://localhost/todomanager/clock">Clock</a></li>
                     <li><a class="nav-link" href="http://localhost/todomanager/Stopwatch/">Stopwatch</a></li>
                     <li><a class="nav-link" href="http://localhost/todomanager/weather/">Weather</a></li>
-                    <li><a class="nav-link login" href="./logout.php">Logout</a></li>
+                    <li><a class="nav-link login" href="http://localhost/todomanager/logout.php">Logout</a></li>
                 </ul>
             </nav>
 

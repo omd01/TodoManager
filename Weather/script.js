@@ -1,4 +1,38 @@
-const apiKey = '8d6454a89dff871786a0307b0dbebbee'
+const apiKey = '34305f1a36d2ad042b8c9c4e0b723d7f'
+var latitude = null;
+var longitude = null;
+
+
+if (navigator.geolocation)
+{
+    navigator.geolocation.getCurrentPosition((loc) => {
+        latitude = loc.coords.latitude;
+        longitude = loc.coords.longitude;
+        fetchWeatherDataGps()
+     })
+
+}
+ else {
+    alert("Geolocation is not supported by this browser.");
+}
+
+async function fetchWeatherDataGps() {
+    try {
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`);
+
+        if (!response.ok) {
+            throw new Error("Unable to fetch weather data");
+        }
+        const data = await response.json();
+      
+        updateWeatherUI(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
 async function fetchWeatherData(city) {
     try {
         const response = await fetch(
@@ -9,29 +43,23 @@ async function fetchWeatherData(city) {
             throw new Error("Unable to fetch weather data");
         }
         const data = await response.json();
-        console.log(data);
-        // console.log(data.main.temp);
-        // console.log(data.name);
-        // console.log(data.wind.speed);
-        // console.log(data.main.humidity);
-        // console.log(data.visibility);
+      
         updateWeatherUI(data);
     } catch (error) {
         console.error(error);
     }
 }
 
+
 const cityElement = document.querySelector(".city");
 const temperature = document.querySelector(".temp");
 const windSpeed = document.querySelector(".wind-speed");
 const humidity = document.querySelector(".humidity");
 const visibility = document.querySelector(".visibility-distance");
-
 const descriptionText = document.querySelector(".description-text");
 const date = document.querySelector(".date");
 const descriptionIcon = document.querySelector(".description i");
 
-// fetchWeatherData();
 
 function updateWeatherUI(data) {
     cityElement.textContent = data.name;

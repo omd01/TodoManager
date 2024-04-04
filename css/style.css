@@ -1,4 +1,4 @@
-/* body {
+body {
     width: 100vw;
     height: 100vh;
     font-family: Arial, sans-serif;
@@ -18,14 +18,16 @@
 h2 {
     text-align: center;
     margin: 15px 10px;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 form {
     margin-bottom: 20px;
 }
 input[type="text"], input[type="password"] {
     width: 100%;
+    height: 50px;
     padding: 10px;
+    font-size: 15px;
     outline: none;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -39,6 +41,7 @@ input[type="submit"], button {
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 15px;
 }
 input[type="submit"]:hover, button:hover {
     background-color: #45a049;
@@ -84,6 +87,7 @@ button:hover {
     background-color: #afffa1;
     color: #000000;
     font-weight: 300;
+    font-size: 1.3rem;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -98,4 +102,4 @@ button:hover {
     justify-self: end;
     
 }
- */
+
