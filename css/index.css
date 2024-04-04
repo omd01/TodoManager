@@ -1,0 +1,100 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cfcfcf;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+h2 {
+    text-align: center;
+    margin: 15px 10px;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type="submit"], button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover, button:hover {
+    background-color: #45a049;
+}
+.todo-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.todo-item input[type="text"] {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+.todo-item .update {
+    background-color: #787c00;
+    margin:0 10px;
+}
+
+.todo-item .update:hover {
+    background-color: #959a00;
+ 
+}
+button {
+    background-color: #f44336;
+}
+button:hover {
+    background-color: #d32f2f;
+}
+
+.notodo {
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+    background-color: #cef8ff;
+    padding: 10px;
+}
+.alert{
+    background-color: #afffa1;
+    color: #000000;
+    font-weight: 300;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.date{
+   margin: 5px 10px;
+  
+    font-size: 15px;
+    font-weight: 300;
+    justify-self: end;
+    
+}
+
