@@ -47,7 +47,7 @@ include 'mail.php';
             addTodo($conn, $todo, $user_id);
             $mail->addAddress($email,$fullname);   
             $mail->Subject = 'Task Added';
-            $mail->Body    = 'You added a task to your todo list. Click here to view your tasks <a href="http://localhost/login-system/index.php">click here</a>';
+            $mail->Body    = 'You added a task to your todo list. Click here to view your tasks <a href="http://localhost/todomanager/index.php">click here</a>';
             $mail->send();
         }
        
