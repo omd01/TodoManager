@@ -38,7 +38,7 @@ $id= $conn->insert_id;
 
 $mail->addAddress($email,$fullname);   
 $mail->Subject = 'A verification link';
-$mail->Body    = 'Click on the link to verify your account <a href="http://localhost/login-system/verify.php?v='.$vcode.'&id='.$id.'">click here</a>';
+$mail->Body    = 'Click on the link to verify your account <a href="http://localhost/todomanager/verify.php?v='.$vcode.'&id='.$id.'">click here</a>';
 $mail->send();
 $_SESSION['id']=$id;
 header('location:index.php');
