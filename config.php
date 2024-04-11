@@ -7,8 +7,8 @@ define("DBPASS", '');
 
 
 //MAIL SETTINGS
-define("EMAIL", 'omdahale01@gmail.com');
-define("SECRET", 'swtnzdcshoqfadux');
+define("EMAIL", 'YOUR_EMAIL');
+define("SECRET", 'APP_PASSWORD_FROM_GMAIL');
 define("MAILHOST", 'smtp.gmail.com');
 define("MAILSECURE",'ssl'); //or ssl
 define("MAILPORT",'465');
